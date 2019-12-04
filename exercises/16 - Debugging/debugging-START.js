@@ -4,15 +4,24 @@ const people = [
   { name: 'Snickers', cool: false, country: 'Dog Country' },
 ];
 
+// Console Methods
 people.forEach((person, index) => {
-  console.log(person.name);
+  // console.error(person.name);
+  // console.warn(person.name);
 });
 
-// Console Methods
+function doingALotOfStuff() {
+  // console.group('Doing some stuff');
+  // console.log('Hey Im one');
+  // console.log('Watch out');
+  // console.log('hey there fine thing');
+  // console.groupEnd('Doing some stuff');
+}
 
 // Callstack
 
 // Grabbing Elements
+// $0 gives you the current element you are selecting in the console from the elements tab
 
 // Breakpoints
 
@@ -29,7 +38,7 @@ function doctorize(name) {
 }
 
 function greet(name) {
-  doesntExist();
+  doesntExist(); // cause an error
   return `Hello ${name}`;
 }
 
@@ -40,8 +49,7 @@ function go() {
 
 const button = document.querySelector('.bigger');
 button.addEventListener('click', function(e) {
-  const newFontSize =
-    parseFloat(getComputedStyle(e.currentTarget).fontSize) + 1;
+  const newFontSize = parseFloat(getComputedStyle(e.currentTarget).fontSize) + 1;
   e.currentTarget.style.fontSize = `${newFontSize}px`;
 });
 

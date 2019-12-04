@@ -7,72 +7,71 @@
 //   return `Dr. ${firstName}`;
 // }
 
-// Function Expression
-// const doctorize = function(firstName) {
+// console.log(doctorize('Chris'));
+
+// // Function Declaration
+// function doctorize(firstName) {
+//   return `Dr. ${firstName}`;
+// }
+
+// // Function Expression
+// const doctorize2 = function(firstName) {
 //   return `Dr. ${firstName}`;
 // };
 
-/* eslint-disable */
-const inchToCM = inches => inches * 2.54;
-
-// function add(a, b = 3) {
-//   const total = a + b;
-//   return total;
-// }
+// const inchesToCM = inches => inches * 2.54;
 
 // const add = (a, b = 3) => a + b;
-
-// returning an object
 
 // function makeABaby(first, last) {
 //   const baby = {
 //     name: `${first} ${last}`,
 //     age: 0
 //   }
-//   return baby;
+//   return baby
 // }
 
-const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: 0 });
-
+// const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: 0 });
 
 // IIFE
 // Immediately Invoked Function Expression
 
-(function(age) {
-  return `You are cool and age ${age}`;
-})(10);
+// (function(age) {
+//   console.log('running the Anon function');
+//   return `You are cool and age: ${age}`;
+// })(10)
 
-// Methods!!!
+// Methods!!
 const wes = {
-  name: 'Westopher Bos',
-  // Method!
-  sayHi: function() {
-    console.log(`Hey ${this.name}`);
+  name: 'Wes Bos',
+  // Method
+  sayHi() {
+    console.log('Hey Wes');
     return 'Hey Wes';
   },
   // Short hand Method
   yellHi() {
-    console.log('HEY WESSSSS');
+    console.log('HEY WESSS!');
   },
-  // Arrow function
-  wisperHi: () => {
-    console.log('hii wesss im a mouse');
-  }
-}
+  // Arrow Function
+  whisperHi: () => {
+    console.log('hiii wess im a mouse');
+  },
+};
 
-// Callback Functions
-// Click Callback
+// Callback functions
+// Click callback
+
 const button = document.querySelector('.clickMe');
 
 function handleClick() {
   console.log('Great Clicking!!');
 }
-
 button.addEventListener('click', function() {
-  console.log('NIce Job!!!');
+  console.log('niccceeee jobbb!');
 });
 
-// Timer Callback
-setTimeout(() => {
-  console.log('DONE! Time to eat!');
+// Timer callback
+setTimeout(function() {
+  console.log('runnnninnngggg!');
 }, 1000);

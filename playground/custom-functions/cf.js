@@ -1,19 +1,17 @@
 // Function Definition
-function calculateBill(billAmount, taxRate = 0.13, tipRate = 0.15) {
+function calculateBill(billAmount, taxRate = 0.12, tipRate = 0.15) {
   // this is the function body
-  console.log('Running Calculate Bill!!');
-  const total = billAmount + billAmount * taxRate + billAmount * tipRate;
-  return total;
+  return billAmount * (1 + taxRate + tipRate);
 }
 
 // Function Call. Or **Run**
-const wesTotal = 500;
-const wesTaxRate = 0.3;
-// const myTotal = calculateBill(wesTotal, wesTaxRate);
+const myTotal = calculateBill(100, 0.12);
+console.log(`My total is $${myTotal.toFixed(2)}`);
 
-// Function Definition
+// const firstName = 'Chris';
+
 function sayHiTo(firstName) {
-  return `Hello ${firstName}`;
+  return `hello ${firstName}`;
 }
 
 // const greeting = sayHiTo('Wes');
@@ -27,5 +25,5 @@ function yell(name = 'Silly Goose') {
   return `HEY ${name.toUpperCase()}`;
 }
 
-const myBill4 = calculateBill(100, undefined, 0.2);
+const myBill4 = calculateBill(100, , 0.2);
 console.log(myBill4);
