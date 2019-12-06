@@ -22,5 +22,16 @@ function logEvent(e) {
   console.log(e.currentTarget.value);
 }
 
-signupForm.name.addEventListener('keyup', logEvent);
-signupForm.name.addEventListener('keydown', logEvent);
+// signupForm.name.addEventListener('keyup', logEvent);
+// signupForm.name.addEventListener('keydown', logEvent);
+
+function handlePhotoClick(e) {
+  if (event.type === 'click' || event.key === 'Enter') {
+    console.log('you clicked the photo');
+  }
+}
+
+const photo = document.querySelector('.photo');
+
+photo.addEventListener('click', handlePhotoClick);
+photo.addEventListener('keyup', handlePhotoClick);
