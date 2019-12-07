@@ -1,44 +1,33 @@
-const cardButtons = document.querySelectorAll('.card button');
-const modalOuter = document.querySelector('.modal-outer');
+const modal = document.querySelector('.modal-outer');
 const modalInner = document.querySelector('.modal-inner');
 
-function handleCardButtonClick(event) {
-  const button = event.currentTarget;
+function openModal(button) {
   const card = button.closest('.card');
-  // Grab the image src
   const imgSrc = card.querySelector('img').src;
   const desc = card.dataset.description;
   const name = card.querySelector('h2').textContent;
-  // populate the modal with the new info
   modalInner.innerHTML = `
-    <img width="600" height="600" src="${imgSrc.replace(
-      '200',
-      '600'
-    )}" alt="${name}"/>
+    <img src="${imgSrc.replace('200', '600')}" alt="${name}" height="600" width="600" />
     <p>${desc}</p>
   `;
-  // show the modal
-  modalOuter.classList.add('open');
+  modal.classList.add('open');
 }
-
-cardButtons.forEach(button =>
-  button.addEventListener('click', handleCardButtonClick)
-);
 
 function closeModal() {
-  modalOuter.classList.remove('open');
+  modal.classList.remove('open');
 }
 
-modalOuter.addEventListener('click', function(event) {
-  const isOutside = !event.target.closest('.modal-inner');
-  if (isOutside) {
+function handleWindowClick(e) {
+  if (e.target.classList.contains('modal-outer')) {
     closeModal();
+  } else if (e.target.tagName === 'BUTTON') {
+    openModal(e.target);
   }
-});
+}
 
-window.addEventListener('keydown', event => {
-  console.log(event);
-  if (event.key === 'Escape') {
+window.addEventListener('click', handleWindowClick);
+window.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
     closeModal();
   }
 });
